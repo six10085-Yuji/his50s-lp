@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>His50s LLC — Japanese Film Camera Wholesale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0b; --bg2: #141410; --border: #2a2a24;
+      --gold: #c8a96e; --gold-dim: #8a7048;
+      --text: #e8e4dc; --text-muted: #8a8478; --text-dim: #4a4840;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --mono: 'DM Mono', 'Courier New', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--serif); font-size: 18px; line-height: 1.7; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 100; opacity: 0.6; }
+    header { border-bottom: 1px solid var(--border); padding: 28px 48px; display: flex; justify-content: space-between; align-items: baseline; animation: fadeDown 0.8s ease both; }
+    .logo { font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: var(--mono); font-weight: 300; }
+    .logo-sub { font-size: 11px; letter-spacing: 0.15em; color: var(--text-muted); font-family: var(--mono); }
+    nav a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-left: 36px; transition: color 0.2s; }
+    nav a:hover { color: var(--gold); }
+    .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
+    .hero-left { padding: 80px 48px; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; animation: fadeUp 1s ease 0.1s both; }
+    .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 32px; }
+    .hero-title { font-size: clamp(52px, 5.5vw, 88px); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-desc { margin-top: 40px; font-size: 17px; font-weight: 300; color: var(--text-muted); max-width: 420px; line-height: 1.8; }
+    .hero-cta { margin-top: 56px; display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px 36px; text-decoration: none; transition: background 0.25s, color 0.25s; align-self: flex-start; }
+    .hero-cta:hover { background: var(--gold); color: var(--bg); }
+    .hero-right { padding: 80px 48px; display: flex; flex-direction: column; justify-content: flex-end; animation: fadeUp 1s ease 0.25s both; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .stat { background: var(--bg); padding: 32px 28px; }
+    .stat-num { font-size: 42px; font-weight: 300; color: var(--gold); line-height: 1; letter-spacing: -0.03em; }
+    .stat-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); margin-top: 8px; }
+    .hero-address { margin-top: 48px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-dim); line-height: 1.9; }
+    .why { display: grid; grid-template-columns: 280px 1fr; border-bottom: 1px solid var(--border); animation: fadeUp 1s ease 0.3s both; }
+    .section-label { padding: 64px 48px; border-right: 1px solid var(--border); font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); writing-mode: vertical-lr; text-orientation: mixed; display: flex; align-items: flex-start; }
+    .why-content { padding: 64px 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+    .why-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; color: var(--gold-dim); margin-bottom: 20px; }
+    .why-title { font-size: 24px; font-weight: 400; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
+    .why-body { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.8; }
+    .inventory { border-bottom: 1px solid var(--border); }
+    .inventory-header { padding: 48px 48px 24px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); }
+    .inventory-header h2 { font-size: 13px; font-family: var(--mono); letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); font-weight: 300; }
+    .inventory-note { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--text-dim); }
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { border-bottom: 1px solid var(--border); }
+    thead th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); font-weight: 300; padding: 16px 48px; text-align: left; }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    tbody tr:hover { background: var(--bg2); }
+    tbody td { padding: 20px 48px; font-size: 16px; font-weight: 300; color: var(--text); }
+    .grade { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--gold); border: 1px solid var(--gold-dim); padding: 2px 8px; display: inline-block; }
+    .price-ebay { font-family: var(--mono); font-size: 14px; color: var(--text-muted); }
+    .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; background: rgba(200,169,110,0.1); color: var(--gold-dim); padding: 2px 8px; margin-left: 6px; }
+    .terms { display: grid; grid-template-columns: 280px 1fr; border-bottom: 1px solid var(--border); }
+    .terms-content { padding: 64px 48px; }
+    .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); max-width: 640px; }
+    .term-cell { background: var(--bg); padding: 24px 28px; }
+    .term-key { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+    .term-val { font-size: 16px; font-weight: 300; color: var(--text); }
+    .contact { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); min-height: 320px; }
+    .contact-left { padding: 64px 48px; border-right: 1px solid var(--border); }
+    .contact-left h2 { font-size: 52px; font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 32px; }
+    .contact-left h2 em { font-style: italic; color: var(--gold); }
+    .contact-link { display: block; font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; color: var(--text-muted); text-decoration: none; margin-top: 12px; transition: color 0.2s; }
+    .contact-link:hover { color: var(--gold); }
+    .contact-right { padding: 64px 48px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .contact-right p { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.9; max-width: 380px; }
+    footer { padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; }
+    footer span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--text-dim); }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 900px) {
+      header { padding: 20px 24px; } nav { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-right { padding: 40px 24px; }
+      .why { grid-template-columns: 1fr; }
+      .section-label { writing-mode: horizontal-tb; padding: 32px 24px 0; border-right: none; border-bottom: 1px solid var(--border); }
+      .why-content { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+      .inventory-header { padding: 24px; }
+      thead th, tbody td { padding: 14px 24px; }
+      .terms { grid-template-columns: 1fr; } .terms-content { padding: 32px 24px; } .terms-grid { max-width: 100%; }
+      .contact { grid-template-columns: 1fr; }
+      .contact-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .contact-right { padding: 32px 24px; }
+      footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">His50s LLC</div>
+    <div class="logo-sub">Japanese Vintage &amp; Film Camera Wholesale</div>
+  </div>
+  <nav>
+    <a href="#why">Why Us</a>
+    <a href="#inventory">Inventory</a>
+    <a href="#terms">Terms</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="hero-eyebrow">Est. Chichibu, Saitama — Japan</div>
+      <h1 class="hero-title">Direct access<br>to <em>Japan's</em><br>film camera<br>market.</h1>
+      <p class="hero-desc">We source, inspect, and supply vintage and film cameras from Japan — below eBay pricing, every unit professionally graded before shipment.</p>
+      <a href="#contact" class="hero-cta">Get in touch →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">A–C</div><div class="stat-label">Grading system</div></div>
+      <div class="stat"><div class="stat-num">Top<br>Rated</div><div class="stat-label">eBay seller status</div></div>
+      <div class="stat"><div class="stat-num">FedEx<br><span style="font-size:0.7em">DHL · EMS</span></div><div class="stat-label">Shipping options</div></div>
+      <div class="stat"><div class="stat-num">3–5d<br><span style="font-size:0.55em;opacity:0.6">/ 2–3w</span></div><div class="stat-label">In stock / Sourced</div></div>
+    </div>
+    <div class="hero-address">
+      Chichibu Business Plaza 3F<br>
+      9-5 Kumagi-machi, Chichibu<br>
+      Saitama, Japan
+    </div>
+    <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
+      <a href="https://www.ebay.com/str/japanretrocameraforest" target="_blank" rel="noopener"
+         style="display:flex;align-items:center;gap:10px;text-decoration:none;padding:10px 16px;border:1px solid var(--border);background:var(--bg2);border-radius:4px;transition:border-color 0.2s;"
+         onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.1em;">eBay</span>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--text);">Japan Retro Camera Forest</span>
+        <span style="margin-left:auto;display:flex;gap:6px;">
+          <span style="font-size:10px;font-family:var(--mono);color:#6abf69;border:1px solid #6abf69;padding:2px 6px;border-radius:2px;">Top Rated</span>
+          <span style="font-size:10px;font-family:var(--mono);color:#6abf69;border:1px solid #6abf69;padding:2px 6px;border-radius:2px;">100% FB</span>
+        </span>
+      </a>
+      <a href="https://www.ebay.com/str/verifiedbrandsjapan" target="_blank" rel="noopener"
+         style="display:flex;align-items:center;gap:10px;text-decoration:none;padding:10px 16px;border:1px solid var(--border);background:var(--bg2);border-radius:4px;transition:border-color 0.2s;"
+         onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.1em;">eBay</span>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--text);">Verified Brands Japan</span>
+        <span style="margin-left:auto;display:flex;gap:6px;">
+          <span style="font-size:10px;font-family:var(--mono);color:#6abf69;border:1px solid #6abf69;padding:2px 6px;border-radius:2px;">Top Rated</span>
+          <span style="font-size:10px;font-family:var(--mono);color:#6abf69;border:1px solid #6abf69;padding:2px 6px;border-radius:2px;">100% FB</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="section-label">Why us</div>
+  <div class="why-content">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <h3 class="why-title">Direct Japan sourcing</h3>
+      <p class="why-body">We operate directly in Japan's used camera market — flea markets, estate sales, dealer networks. No middlemen. Models that are scarce in your market are often abundant here.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <h3 class="why-title">Professionally inspected</h3>
+      <p class="why-body">Every camera is professionally inspected and graded A, B, or C by our partner inspection company before shipment. Condition reports and additional photos available on request.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <h3 class="why-title">Below-eBay pricing</h3>
+      <p class="why-body">Our pricing is structured to give you real margin from day one — not a race to the bottom. We track which models move fast in your city vs. what's plentiful here, and price accordingly. Quotes provided individually on request.</p>
+    </div>
+  </div>
+</section>
+
+<section class="inventory" id="inventory">
+  <div class="inventory-header">
+    <h2>Sample Inventory</h2>
+    <span class="inventory-note">Representative items — updated periodically</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Grade</th>
+        <th>eBay Market Price</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Canon Autoboy 2 AF35M II 35mm Film Camera<span class="tag">film</span></td>
+        <td><span class="grade">B</span></td>
+        <td class="price-ebay">$128</td>
+        <td style="font-size:13px;color:var(--text-muted)">Our #1 by watchers (47) &amp; units sold — compact AF point &amp; shoot</td>
+      </tr>
+      <tr>
+        <td>Minolta Hi-Matic AF 35mm Point &amp; Shoot Camera<span class="tag">film</span></td>
+        <td><span class="grade">B</span></td>
+        <td class="price-ebay">$108</td>
+        <td style="font-size:13px;color:var(--text-muted)">31 active watchers, 32 SKUs in stock — high-volume entry model</td>
+      </tr>
+      <tr>
+        <td>Canon A-1 SLR + New FD 50mm f/1.4<span class="tag">film</span></td>
+        <td><span class="grade">B</span></td>
+        <td class="price-ebay">$203</td>
+        <td style="font-size:13px;color:var(--text-muted)">29 watchers — full-program AE SLR, more capable than AE-1</td>
+      </tr>
+      <tr>
+        <td>Canon AE-1 Black + FD 50mm f/1.8<span class="tag">film</span></td>
+        <td><span class="grade">B</span></td>
+        <td class="price-ebay">$216</td>
+        <td style="font-size:13px;color:var(--text-muted)">19 watchers, steady seller — world's most searched film SLR</td>
+      </tr>
+      <tr>
+        <td>Olympus OM-2 35mm Film Camera + Zuiko 50mm<span class="tag">film</span></td>
+        <td><span class="grade">B</span></td>
+        <td class="price-ebay">$178</td>
+        <td style="font-size:13px;color:var(--text-muted)">20 watchers, 14 SKUs — aperture-priority workhorse SLR</td>
+      </tr>
+      <tr>
+        <td>Fujifilm Silvi F2.8 35mm Point &amp; Shoot Camera<span class="tag">film</span></td>
+        <td><span class="grade">A</span></td>
+        <td class="price-ebay">$258</td>
+        <td style="font-size:13px;color:var(--text-muted)">17 watchers, 49 SKUs — f/2.8 wide compact, scarce outside Japan</td>
+      </tr>
+      <tr>
+        <td>Olympus OM-1 35mm Film Camera + Zuiko 50mm<span class="tag">film</span></td>
+        <td><span class="grade">B</span></td>
+        <td class="price-ebay">$223</td>
+        <td style="font-size:13px;color:var(--text-muted)">15 watchers, 14 SKUs — all-mechanical compact SLR, cult following</td>
+      </tr>
+      <tr>
+        <td>Canon New F-1 SLR + FD 50mm f/1.4<span class="tag">film</span></td>
+        <td><span class="grade">A</span></td>
+        <td class="price-ebay">$326</td>
+        <td style="font-size:13px;color:var(--text-muted)">18 watchers — Canon's professional flagship, premium segment</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="terms" id="terms">
+  <div class="section-label">Trade terms</div>
+  <div class="terms-content">
+    <div class="terms-grid">
+      <div class="term-cell"><div class="term-key">Minimum order</div><div class="term-val">3 items per shipment</div></div>
+      <div class="term-cell"><div class="term-key">Payment</div><div class="term-val">Wise / PayPal (invoice)</div></div>
+      <div class="term-cell"><div class="term-key">Shipping</div><div class="term-val">FedEx / DHL / EMS from Japan</div></div>
+      <div class="term-cell"><div class="term-key">Lead time</div><div class="term-val">3–5 business days (in stock) · 2–3 weeks (sourced to order)</div></div>
+      <div class="term-cell" style="grid-column: span 2"><div class="term-key">Condition reports</div><div class="term-val">Available on request — additional photos, shutter test results, full inspection notes</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-left">
+    <h2>Let's <em>talk</em><br>trade.</h2>
+    <a href="mailto:brands@his50s.com" class="contact-link">→ brands@his50s.com</a>
+  </div>
+  <div class="contact-right">
+    <p>We're happy to share a current stock list, discuss pricing on specific models, or put together a comparison sheet for models you're having trouble restocking. No commitment required — just reach out.</p>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 His50s LLC — Chichibu, Saitama, Japan</span>
+  <span>wholesale.his50s.com</span>
+</footer>
+
+</body>
+</html>
