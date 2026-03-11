@@ -17,6 +17,8 @@
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--serif); font-size: 18px; line-height: 1.7; overflow-x: hidden; }
+
+    /* HEADER */
     header { border-bottom: 1px solid var(--border); padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; animation: fadeDown 0.8s ease both; background: #231f16; }
     .header-brand { display: flex; align-items: center; gap: 16px; }
     .header-logo-img { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 1px solid var(--border); background: #fff; }
@@ -24,26 +26,45 @@
     .logo-sub { font-size: 11px; letter-spacing: 0.15em; color: var(--text-muted); font-family: var(--mono); }
     nav a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-left: 36px; transition: color 0.2s; }
     nav a:hover { color: var(--gold); }
+
+    /* HERO */
     .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
     .hero-left { padding: 80px 48px; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; animation: fadeUp 1s ease 0.1s both; }
     .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 32px; }
-    .hero-title { font-size: clamp(52px, 5.5vw, 88px); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); }
+    .hero-title { font-size: clamp(48px, 5.2vw, 82px); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); }
     .hero-title em { font-style: italic; color: var(--gold); }
     .hero-desc { margin-top: 40px; font-size: 17px; font-weight: 300; color: var(--text-muted); max-width: 420px; line-height: 1.9; }
-    .hero-cta { margin-top: 56px; display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px 36px; text-decoration: none; transition: background 0.25s, color 0.25s; align-self: flex-start; }
+    .hero-ctas { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-cta { display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 14px 32px; text-decoration: none; transition: background 0.25s, color 0.25s; }
     .hero-cta:hover { background: var(--gold); color: var(--bg); }
+    .hero-cta-secondary { display: inline-block; border: 1px solid var(--border); color: var(--text-muted); font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 14px 32px; text-decoration: none; transition: border-color 0.25s, color 0.25s; }
+    .hero-cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
     .hero-right { padding: 80px 48px; display: flex; flex-direction: column; justify-content: flex-end; animation: fadeUp 1s ease 0.25s both; }
     .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-    .stat { background: var(--bg2); padding: 32px 28px; }
-    .stat-num { font-size: 42px; font-weight: 300; color: var(--gold); line-height: 1; letter-spacing: -0.03em; }
+    .stat { background: var(--bg2); padding: 28px 24px; }
+    .stat-num { font-size: 38px; font-weight: 300; color: var(--gold); line-height: 1; letter-spacing: -0.03em; }
+    .stat-num.highlight { font-size: 42px; color: var(--gold); }
     .stat-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); margin-top: 8px; }
+    .stat-note { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; color: var(--gold-dim); margin-top: 4px; }
     .hero-address { margin-top: 48px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-dim); line-height: 1.9; }
+
+    /* WHY */
     .why { display: grid; grid-template-columns: 280px 1fr; border-bottom: 1px solid var(--border); animation: fadeUp 1s ease 0.3s both; }
     .section-label { padding: 64px 48px; border-right: 1px solid var(--border); font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); writing-mode: vertical-lr; text-orientation: mixed; display: flex; align-items: flex-start; }
     .why-content { padding: 64px 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
     .why-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; color: var(--gold-dim); margin-bottom: 20px; }
     .why-title { font-size: 24px; font-weight: 400; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
     .why-body { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.9; }
+
+    /* PHOTOS */
+    .photos { border-bottom: 1px solid var(--border); }
+    .photos-header { padding: 32px 48px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; }
+    .photos-header h2 { font-size: 13px; font-family: var(--mono); letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); font-weight: 300; }
+    .photos-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); }
+    .photos-grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .photos-grid img:hover { opacity: 0.85; }
+
+    /* INVENTORY */
     .inventory { border-bottom: 1px solid var(--border); }
     .inventory-header { padding: 48px 48px 24px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); }
     .inventory-header h2 { font-size: 13px; font-family: var(--mono); letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); font-weight: 300; }
@@ -57,12 +78,17 @@
     .grade { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--gold); border: 1px solid var(--gold-dim); padding: 2px 8px; display: inline-block; }
     .price-ebay { font-family: var(--mono); font-size: 14px; color: var(--text-muted); }
     .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; background: rgba(212,170,98,0.12); color: var(--gold-dim); padding: 2px 8px; margin-left: 6px; }
+
+    /* TERMS */
     .terms { display: grid; grid-template-columns: 280px 1fr; border-bottom: 1px solid var(--border); }
     .terms-content { padding: 64px 48px; }
     .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); max-width: 640px; }
     .term-cell { background: var(--bg2); padding: 24px 28px; }
     .term-key { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
     .term-val { font-size: 16px; font-weight: 300; color: var(--text); }
+    .term-val strong { color: var(--gold); font-weight: 400; }
+
+    /* CONTACT */
     .contact { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); min-height: 320px; }
     .contact-left { padding: 64px 48px; border-right: 1px solid var(--border); }
     .contact-left h2 { font-size: 52px; font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 32px; }
@@ -71,19 +97,26 @@
     .contact-link:hover { color: var(--gold); }
     .contact-right { padding: 64px 48px; display: flex; flex-direction: column; justify-content: flex-end; }
     .contact-right p { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.9; max-width: 380px; }
+    .contact-note { margin-top: 24px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--gold-dim); }
+
     footer { padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
     footer span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--text-dim); }
+
     @keyframes fadeDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
     @media (max-width: 900px) {
       header { padding: 16px 24px; } nav { display: none; }
       .header-logo-img { height: 40px; width: 40px; }
       .hero { grid-template-columns: 1fr; }
       .hero-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
       .hero-right { padding: 40px 24px; }
+      .hero-ctas { flex-direction: column; }
       .why { grid-template-columns: 1fr; }
       .section-label { writing-mode: horizontal-tb; padding: 32px 24px 0; border-right: none; border-bottom: 1px solid var(--border); }
       .why-content { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+      .photos-grid { grid-template-columns: repeat(3, 1fr); }
+      .photos-header { padding: 24px; }
       .inventory-header { padding: 24px; }
       thead th, tbody td { padding: 14px 24px; }
       .terms { grid-template-columns: 1fr; } .terms-content { padding: 32px 24px; } .terms-grid { max-width: 100%; }
@@ -116,18 +149,25 @@
 <section class="hero">
   <div class="hero-left">
     <div>
-      <div class="hero-eyebrow">Est. Chichibu, Saitama — Japan</div>
-      <h1 class="hero-title">Direct access<br>to <em>Japan's</em><br>film camera<br>market.</h1>
-      <p class="hero-desc">We source, inspect, and supply vintage and film cameras from Japan — below eBay pricing, every unit professionally graded before shipment.</p>
-      <a href="#contact" class="hero-cta">Get in touch →</a>
+      <div class="hero-eyebrow">Wholesale supplier · For camera stores &amp; dealers worldwide</div>
+      <h1 class="hero-title">Wholesale<br>access to<br><em>Japan's</em> film<br>camera market.</h1>
+      <p class="hero-desc">We source vintage and film cameras directly from Japan's domestic market and supply them to camera stores worldwide — below eBay pricing, every unit professionally graded before shipment.</p>
+      <div class="hero-ctas">
+        <a href="mailto:brands@his50s.com" class="hero-cta">Get in touch →</a>
+        <a href="mailto:brands@his50s.com?subject=Stock List Request" class="hero-cta-secondary">Request stock list →</a>
+      </div>
     </div>
   </div>
   <div class="hero-right">
     <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num highlight">3</div>
+        <div class="stat-label">Min. order (items)</div>
+        <div class="stat-note">No large MOQ required</div>
+      </div>
       <div class="stat"><div class="stat-num">A–C</div><div class="stat-label">Grading system</div></div>
       <div class="stat"><div class="stat-num">Top<br>Rated</div><div class="stat-label">eBay seller status</div></div>
       <div class="stat"><div class="stat-num">FedEx<br><span style="font-size:0.7em">DHL · EMS</span></div><div class="stat-label">Shipping options</div></div>
-      <div class="stat"><div class="stat-num">3–5d<br><span style="font-size:0.55em;opacity:0.7">/ 2–3w</span></div><div class="stat-label">In stock / Sourced</div></div>
     </div>
     <div class="hero-address">
       Chichibu Business Plaza 3F<br>
@@ -175,8 +215,27 @@
     <div class="why-item">
       <div class="why-num">03</div>
       <h3 class="why-title">Below-eBay pricing</h3>
-      <p class="why-body">Our pricing is structured to give you real margin from day one — not a race to the bottom. We track which models move fast in your city vs. what's plentiful here, and price accordingly. Quotes provided individually on request.</p>
+      <p class="why-body">Our pricing gives you real margin from day one. We track which models move fast in your market vs. what's plentiful in Japan, and price accordingly. Quotes provided individually.</p>
     </div>
+  </div>
+</section>
+
+<section class="photos">
+  <div class="photos-header">
+    <h2>Stock Photos</h2>
+    <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:var(--text-dim);">Sample items from our inventory</span>
+  </div>
+  <div class="photos-grid">
+    <img src="/DSC_1887.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_2985.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_3258.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_3277.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_3609.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_4136.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_5352.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_7476.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_9787.JPG" alt="Film camera stock" loading="lazy" />
+    <img src="/DSC_9805.JPG" alt="Film camera stock" loading="lazy" />
   </div>
 </section>
 
@@ -251,7 +310,7 @@
   <div class="section-label">Trade terms</div>
   <div class="terms-content">
     <div class="terms-grid">
-      <div class="term-cell"><div class="term-key">Minimum order</div><div class="term-val">3 items per shipment</div></div>
+      <div class="term-cell"><div class="term-key">Minimum order</div><div class="term-val"><strong>3 items</strong> per shipment</div></div>
       <div class="term-cell"><div class="term-key">Payment</div><div class="term-val">Wise / PayPal (invoice)</div></div>
       <div class="term-cell"><div class="term-key">Shipping</div><div class="term-val">FedEx / DHL / EMS from Japan</div></div>
       <div class="term-cell"><div class="term-key">Lead time</div><div class="term-val">3–5 business days (in stock) · 2–3 weeks (sourced to order)</div></div>
@@ -267,7 +326,8 @@
     <a href="https://www.instagram.com/his50s.cameras/" target="_blank" rel="noopener" class="contact-link">→ @his50s.cameras</a>
   </div>
   <div class="contact-right">
-    <p>We're happy to share a current stock list, discuss pricing on specific models, or put together a comparison sheet for models you're having trouble restocking. No commitment required — just reach out.</p>
+    <p>We're happy to put together a current stock list, discuss pricing on specific models, or compare what's available here vs. what's been hard to restock in your market.</p>
+    <p class="contact-note">No commitment. Just ask for a stock list.</p>
   </div>
 </section>
 
