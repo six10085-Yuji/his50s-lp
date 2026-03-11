@@ -9,18 +9,17 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0d0d0b; --bg2: #141410; --border: #2a2a24;
-      --gold: #c8a96e; --gold-dim: #8a7048;
-      --text: #e8e4dc; --text-muted: #8a8478; --text-dim: #4a4840;
+      --bg: #1e1b13; --bg2: #262217; --border: #3a3628;
+      --gold: #d4aa62; --gold-dim: #9a7a40;
+      --text: #f4f0e6; --text-muted: #b0a890; --text-dim: #6a6454;
       --serif: 'Cormorant Garamond', Georgia, serif;
       --mono: 'DM Mono', 'Courier New', monospace;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--serif); font-size: 18px; line-height: 1.7; overflow-x: hidden; }
-    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 100; opacity: 0.6; }
-    header { border-bottom: 1px solid var(--border); padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; animation: fadeDown 0.8s ease both; }
+    header { border-bottom: 1px solid var(--border); padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; animation: fadeDown 0.8s ease both; background: #231f16; }
     .header-brand { display: flex; align-items: center; gap: 16px; }
-    .header-logo-img { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 1px solid var(--border); }
+    .header-logo-img { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 1px solid var(--border); background: #fff; }
     .logo { font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: var(--mono); font-weight: 300; }
     .logo-sub { font-size: 11px; letter-spacing: 0.15em; color: var(--text-muted); font-family: var(--mono); }
     nav a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-left: 36px; transition: color 0.2s; }
@@ -30,12 +29,12 @@
     .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 32px; }
     .hero-title { font-size: clamp(52px, 5.5vw, 88px); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); }
     .hero-title em { font-style: italic; color: var(--gold); }
-    .hero-desc { margin-top: 40px; font-size: 17px; font-weight: 300; color: var(--text-muted); max-width: 420px; line-height: 1.8; }
+    .hero-desc { margin-top: 40px; font-size: 17px; font-weight: 300; color: var(--text-muted); max-width: 420px; line-height: 1.9; }
     .hero-cta { margin-top: 56px; display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px 36px; text-decoration: none; transition: background 0.25s, color 0.25s; align-self: flex-start; }
     .hero-cta:hover { background: var(--gold); color: var(--bg); }
     .hero-right { padding: 80px 48px; display: flex; flex-direction: column; justify-content: flex-end; animation: fadeUp 1s ease 0.25s both; }
     .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-    .stat { background: var(--bg); padding: 32px 28px; }
+    .stat { background: var(--bg2); padding: 32px 28px; }
     .stat-num { font-size: 42px; font-weight: 300; color: var(--gold); line-height: 1; letter-spacing: -0.03em; }
     .stat-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); margin-top: 8px; }
     .hero-address { margin-top: 48px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-dim); line-height: 1.9; }
@@ -44,24 +43,24 @@
     .why-content { padding: 64px 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
     .why-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; color: var(--gold-dim); margin-bottom: 20px; }
     .why-title { font-size: 24px; font-weight: 400; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
-    .why-body { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.8; }
+    .why-body { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.9; }
     .inventory { border-bottom: 1px solid var(--border); }
     .inventory-header { padding: 48px 48px 24px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); }
-    .inventory-header h2 { font-size: 13px; font-family: var(--mono); letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); font-weight: 300; }
+    .inventory-header h2 { font-size: 13px; font-family: var(--mono); letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); font-weight: 300; }
     .inventory-note { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--text-dim); }
     table { width: 100%; border-collapse: collapse; }
     thead tr { border-bottom: 1px solid var(--border); }
-    thead th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); font-weight: 300; padding: 16px 48px; text-align: left; }
+    thead th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); font-weight: 300; padding: 16px 48px; text-align: left; }
     tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
     tbody tr:hover { background: var(--bg2); }
     tbody td { padding: 20px 48px; font-size: 16px; font-weight: 300; color: var(--text); }
     .grade { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--gold); border: 1px solid var(--gold-dim); padding: 2px 8px; display: inline-block; }
     .price-ebay { font-family: var(--mono); font-size: 14px; color: var(--text-muted); }
-    .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; background: rgba(200,169,110,0.1); color: var(--gold-dim); padding: 2px 8px; margin-left: 6px; }
+    .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; background: rgba(212,170,98,0.12); color: var(--gold-dim); padding: 2px 8px; margin-left: 6px; }
     .terms { display: grid; grid-template-columns: 280px 1fr; border-bottom: 1px solid var(--border); }
     .terms-content { padding: 64px 48px; }
     .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); max-width: 640px; }
-    .term-cell { background: var(--bg); padding: 24px 28px; }
+    .term-cell { background: var(--bg2); padding: 24px 28px; }
     .term-key { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
     .term-val { font-size: 16px; font-weight: 300; color: var(--text); }
     .contact { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); min-height: 320px; }
@@ -72,7 +71,7 @@
     .contact-link:hover { color: var(--gold); }
     .contact-right { padding: 64px 48px; display: flex; flex-direction: column; justify-content: flex-end; }
     .contact-right p { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.9; max-width: 380px; }
-    footer { padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; }
+    footer { padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
     footer span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--text-dim); }
     @keyframes fadeDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -99,7 +98,7 @@
 
 <header>
   <div class="header-brand">
-    <img src="/logo_his50s.png" alt="His50s LLC" class="header-logo-img" />
+    <img src="/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%94%A8.png" alt="His50s LLC" class="header-logo-img" />
     <div>
       <div class="logo">His50s LLC</div>
       <div class="logo-sub">Japanese Vintage &amp; Film Camera Wholesale</div>
@@ -128,7 +127,7 @@
       <div class="stat"><div class="stat-num">A–C</div><div class="stat-label">Grading system</div></div>
       <div class="stat"><div class="stat-num">Top<br>Rated</div><div class="stat-label">eBay seller status</div></div>
       <div class="stat"><div class="stat-num">FedEx<br><span style="font-size:0.7em">DHL · EMS</span></div><div class="stat-label">Shipping options</div></div>
-      <div class="stat"><div class="stat-num">3–5d<br><span style="font-size:0.55em;opacity:0.6">/ 2–3w</span></div><div class="stat-label">In stock / Sourced</div></div>
+      <div class="stat"><div class="stat-num">3–5d<br><span style="font-size:0.55em;opacity:0.7">/ 2–3w</span></div><div class="stat-label">In stock / Sourced</div></div>
     </div>
     <div class="hero-address">
       Chichibu Business Plaza 3F<br>
@@ -142,8 +141,8 @@
         <span style="font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.1em;">eBay</span>
         <span style="font-family:var(--mono);font-size:12px;color:var(--text);">Japan Retro Camera Forest</span>
         <span style="margin-left:auto;display:flex;gap:6px;">
-          <span style="font-size:10px;font-family:var(--mono);color:#6abf69;border:1px solid #6abf69;padding:2px 6px;border-radius:2px;">Top Rated</span>
-          <span style="font-size:10px;font-family:var(--mono);color:#6abf69;border:1px solid #6abf69;padding:2px 6px;border-radius:2px;">100% FB</span>
+          <span style="font-size:10px;font-family:var(--mono);color:#7dd87b;border:1px solid #7dd87b;padding:2px 6px;border-radius:2px;">Top Rated</span>
+          <span style="font-size:10px;font-family:var(--mono);color:#7dd87b;border:1px solid #7dd87b;padding:2px 6px;border-radius:2px;">100% FB</span>
         </span>
       </a>
       <a href="https://www.ebay.com/str/verifiedbrandsjapan" target="_blank" rel="noopener"
@@ -152,8 +151,8 @@
         <span style="font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.1em;">eBay</span>
         <span style="font-family:var(--mono);font-size:12px;color:var(--text);">Verified Brands Japan</span>
         <span style="margin-left:auto;display:flex;gap:6px;">
-          <span style="font-size:10px;font-family:var(--mono);color:#6abf69;border:1px solid #6abf69;padding:2px 6px;border-radius:2px;">Top Rated</span>
-          <span style="font-size:10px;font-family:var(--mono);color:#6abf69;border:1px solid #6abf69;padding:2px 6px;border-radius:2px;">100% FB</span>
+          <span style="font-size:10px;font-family:var(--mono);color:#7dd87b;border:1px solid #7dd87b;padding:2px 6px;border-radius:2px;">Top Rated</span>
+          <span style="font-size:10px;font-family:var(--mono);color:#7dd87b;border:1px solid #7dd87b;padding:2px 6px;border-radius:2px;">100% FB</span>
         </span>
       </a>
     </div>
