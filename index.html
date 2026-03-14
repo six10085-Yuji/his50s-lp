@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- v4 -->
+  <!-- v5 -->
   <title>His50s LLC — Japanese Film Camera Wholesale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
@@ -35,11 +35,16 @@
     .hero-title { font-size: clamp(48px, 5.2vw, 82px); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); }
     .hero-title em { font-style: italic; color: var(--gold); }
     .hero-desc { margin-top: 40px; font-size: 17px; font-weight: 300; color: var(--text-muted); max-width: 420px; line-height: 1.9; }
-    .hero-ctas { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-cta { display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 14px 32px; text-decoration: none; transition: background 0.25s, color 0.25s; }
-    .hero-cta:hover { background: var(--gold); color: var(--bg); }
-    .hero-cta-secondary { display: inline-block; border: 1px solid var(--border); color: var(--text-muted); font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 14px 32px; text-decoration: none; transition: border-color 0.25s, color 0.25s; }
-    .hero-cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-ctas { margin-top: 48px; display: flex; flex-direction: column; gap: 20px; }
+
+    /* EMAIL BLOCK */
+    .email-block { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .email-display { font-family: var(--mono); font-size: 15px; letter-spacing: 0.06em; color: var(--text); border: 1px solid var(--border); padding: 12px 20px; background: var(--bg2); user-select: all; }
+    .copy-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 12px 24px; border: 1px solid var(--gold); color: var(--gold); background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .copy-btn:hover { background: var(--gold); color: var(--bg); }
+    .copy-btn.copied { background: var(--gold); color: var(--bg); }
+    .email-hint { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--text-dim); margin-top: 4px; }
+
     .hero-right { padding: 80px 48px; display: flex; flex-direction: column; justify-content: flex-end; animation: fadeUp 1s ease 0.25s both; }
     .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
     .stat { background: var(--bg2); padding: 28px 24px; }
@@ -94,6 +99,7 @@
     .contact-left { padding: 64px 48px; border-right: 1px solid var(--border); }
     .contact-left h2 { font-size: 52px; font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 32px; }
     .contact-left h2 em { font-style: italic; color: var(--gold); }
+    .contact-email-block { margin-top: 8px; }
     .contact-link { display: block; font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; color: var(--text-muted); text-decoration: none; margin-top: 12px; transition: color 0.2s; }
     .contact-link:hover { color: var(--gold); }
     .contact-right { padding: 64px 48px; display: flex; flex-direction: column; justify-content: flex-end; }
@@ -112,7 +118,7 @@
       .hero { grid-template-columns: 1fr; }
       .hero-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
       .hero-right { padding: 40px 24px; }
-      .hero-ctas { flex-direction: column; }
+      .email-block { flex-direction: column; align-items: flex-start; }
       .why { grid-template-columns: 1fr; }
       .section-label { writing-mode: horizontal-tb; padding: 32px 24px 0; border-right: none; border-bottom: 1px solid var(--border); }
       .why-content { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
@@ -154,8 +160,13 @@
       <h1 class="hero-title">Wholesale<br>access to<br><em>Japan's</em> film<br>camera market.</h1>
       <p class="hero-desc">We source vintage and film cameras directly from Japan's domestic market and supply them to camera stores worldwide — below eBay pricing, every unit professionally graded before shipment.</p>
       <div class="hero-ctas">
-        <a href="mailto:brands@his50s.com" class="hero-cta">Get in touch →</a>
-        <a href="mailto:brands@his50s.com?subject=What we're looking for" class="hero-cta-secondary">Tell us what you're looking for →</a>
+        <div>
+          <div class="email-block">
+            <span class="email-display" id="hero-email">brands@his50s.com</span>
+            <button class="copy-btn" id="hero-copy-btn" onclick="copyEmail('hero-copy-btn')">Copy address</button>
+          </div>
+          <div class="email-hint">Paste into Gmail, Outlook, or any mail app to get in touch.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -323,8 +334,14 @@
 <section class="contact" id="contact">
   <div class="contact-left">
     <h2>Let's <em>talk</em><br>trade.</h2>
-    <a href="mailto:brands@his50s.com" class="contact-link">→ brands@his50s.com</a>
-    <a href="https://www.instagram.com/his50s.cameras/" target="_blank" rel="noopener" class="contact-link">→ @his50s.cameras</a>
+    <div class="contact-email-block">
+      <div class="email-block" style="margin-top: 8px;">
+        <span class="email-display" id="contact-email">brands@his50s.com</span>
+        <button class="copy-btn" id="contact-copy-btn" onclick="copyEmail('contact-copy-btn')">Copy address</button>
+      </div>
+      <div class="email-hint" style="margin-top: 8px;">Paste into Gmail, Outlook, or any mail app.</div>
+    </div>
+    <a href="https://www.instagram.com/his50s.cameras/" target="_blank" rel="noopener" class="contact-link" style="margin-top: 20px;">→ @his50s.cameras</a>
   </div>
   <div class="contact-right">
     <p>Looking for a specific model or brand? Tell us what sells in your market — we source to order. No minimum commitment, no fixed catalogue.</p>
@@ -336,6 +353,31 @@
   <span>© 2026 His50s LLC — Chichibu, Saitama, Japan</span>
   <span>wholesale.his50s.com</span>
 </footer>
+
+<script>
+  function copyEmail(btnId) {
+    const email = 'brands@his50s.com';
+    navigator.clipboard.writeText(email).then(function() {
+      const btn = document.getElementById(btnId);
+      const original = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    }).catch(function() {
+      // Fallback: select the text for manual copy
+      const emailEl = btnId === 'hero-copy-btn'
+        ? document.getElementById('hero-email')
+        : document.getElementById('contact-email');
+      const range = document.createRange();
+      range.selectNode(emailEl);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+    });
+  }
+</script>
 
 </body>
 </html>
