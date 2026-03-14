@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- v5 -->
+  <!-- v6 -->
   <title>His50s LLC — Japanese Film Camera Wholesale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
@@ -43,7 +43,8 @@
     .copy-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 12px 24px; border: 1px solid var(--gold); color: var(--gold); background: transparent; cursor: pointer; transition: background 0.25s, color 0.25s; white-space: nowrap; }
     .copy-btn:hover { background: var(--gold); color: var(--bg); }
     .copy-btn.copied { background: var(--gold); color: var(--bg); }
-    .email-hint { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--text-dim); margin-top: 4px; }
+    .email-hint { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--text-dim); margin-top: 6px; }
+    .email-prompt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--gold-dim); margin-top: 16px; }
 
     .hero-right { padding: 80px 48px; display: flex; flex-direction: column; justify-content: flex-end; animation: fadeUp 1s ease 0.25s both; }
     .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
@@ -166,6 +167,7 @@
             <button class="copy-btn" id="hero-copy-btn" onclick="copyEmail('hero-copy-btn')">Copy address</button>
           </div>
           <div class="email-hint">Paste into Gmail, Outlook, or any mail app to get in touch.</div>
+          <div class="email-prompt">→ Tell us what you're looking for — we source to order.</div>
         </div>
       </div>
     </div>
@@ -367,7 +369,6 @@
         btn.classList.remove('copied');
       }, 2000);
     }).catch(function() {
-      // Fallback: select the text for manual copy
       const emailEl = btnId === 'hero-copy-btn'
         ? document.getElementById('hero-email')
         : document.getElementById('contact-email');
