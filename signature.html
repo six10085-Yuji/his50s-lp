@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Email Signature — brands@his50s.com</title>
+  <style>
+    body { background: #f5f3ee; display: flex; justify-content: center; padding: 48px 24px; font-family: sans-serif; }
+    .preview-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #999; margin-bottom: 16px; font-family: monospace; }
+    .wrapper { background: #fff; border: 1px solid #e0ddd8; border-radius: 8px; padding: 32px; max-width: 560px; width: 100%; }
+    .copy-area { margin-top: 32px; }
+    .copy-area textarea { width: 100%; height: 80px; font-size: 11px; font-family: monospace; border: 1px solid #e0ddd8; padding: 10px; resize: none; color: #666; border-radius: 4px; box-sizing: border-box; }
+    .copy-btn { margin-top: 8px; padding: 8px 20px; background: #1a1a1a; color: #fff; border: none; border-radius: 4px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-family: monospace; }
+    .copy-btn:hover { background: #333; }
+  </style>
+</head>
+<body>
+<div>
+  <div class="preview-label">Preview — brands@his50s.com signature</div>
+  <div class="wrapper">
+
+    <!-- =============================================
+         EMAIL SIGNATURE — copy everything below
+         into Gmail › Settings › Signature (HTML mode)
+         ============================================= -->
+    <table cellpadding="0" cellspacing="0" border="0"
+           style="font-family:'Courier New',Courier,monospace;font-size:12px;line-height:1.7;color:#1a1a1a;max-width:480px;">
+      <tr>
+        <td style="border-left:3px solid #d4aa62;padding-left:16px;">
+
+          <!-- Name & title -->
+          <div style="font-size:14px;font-weight:bold;letter-spacing:0.04em;color:#1a1a1a;">Yuji Osawa</div>
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#d4aa62;margin-bottom:10px;">Managing Member · His50s LLC</div>
+
+          <!-- Divider -->
+          <div style="border-top:1px solid #e8e4dc;margin-bottom:10px;"></div>
+
+          <!-- Contact -->
+          <div style="font-size:11px;color:#555;margin-bottom:2px;">
+            <span style="color:#9a7a40;letter-spacing:0.1em;">EMAIL</span>&nbsp;&nbsp;
+            <a href="mailto:brands@his50s.com" style="color:#1a1a1a;text-decoration:none;">brands@his50s.com</a>
+          </div>
+          <div style="font-size:11px;color:#555;margin-bottom:10px;">
+            <span style="color:#9a7a40;letter-spacing:0.1em;">WEB&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;
+            <a href="https://wholesale.his50s.com" style="color:#1a1a1a;text-decoration:none;">wholesale.his50s.com</a>
+          </div>
+
+          <!-- eBay stores -->
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:4px;">eBay Stores</div>
+          <div style="font-size:11px;margin-bottom:2px;">
+            <a href="https://www.ebay.com/str/japanretrocameraforest"
+               style="color:#9a7a40;text-decoration:none;">↗ Japan Retro Camera Forest</a>
+          </div>
+          <div style="font-size:11px;margin-bottom:10px;">
+            <a href="https://www.ebay.com/str/verifiedbrandsjapan"
+               style="color:#9a7a40;text-decoration:none;">↗ Verified Brands Japan</a>
+          </div>
+
+          <!-- Divider -->
+          <div style="border-top:1px solid #e8e4dc;margin-bottom:8px;"></div>
+
+          <!-- Company address -->
+          <div style="font-size:10px;color:#aaa;line-height:1.6;">
+            His50s LLC · Chichibu Business Plaza 3F<br>
+            9-5 Kumagimachi, Chichibu, Saitama 368-0032, Japan<br>
+            Secondhand Dealer License No. 431150064826
+          </div>
+
+        </td>
+      </tr>
+    </table>
+    <!-- =============================================
+         END OF SIGNATURE
+         ============================================= -->
+
+  </div>
+
+  <div class="copy-area">
+    <div style="font-size:11px;color:#888;font-family:monospace;letter-spacing:0.1em;margin-bottom:6px;">GMAIL SETUP → Settings › See all settings › Signature › (⋮) Edit HTML</div>
+    <textarea id="sig-code" readonly>SIGNATURE_PLACEHOLDER</textarea>
+    <button class="copy-btn" onclick="copySig()">Copy HTML</button>
+  </div>
+</div>
+
+<script>
+  const sigHTML = document.querySelector('table').outerHTML;
+  document.getElementById('sig-code').value = sigHTML;
+  function copySig() {
+    navigator.clipboard.writeText(sigHTML).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied ✓';
+      setTimeout(() => btn.textContent = 'Copy HTML', 2000);
+    });
+  }
+</script>
+</body>
+</html>
