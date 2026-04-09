@@ -1,5 +1,8 @@
 {
   "framework": null,
   "buildCommand": null,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/google-feed.xml", "destination": "/public/google-feed.xml" }
+  ]
 }
